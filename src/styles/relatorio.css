@@ -1,0 +1,80 @@
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #FAFAFA;
+    font: 12pt "Tahoma";
+}
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+.page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 10mm;
+    margin: 10mm auto;
+    border: 1px #D3D3D3 solid;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.subpage {
+    /* padding: 1cm; */
+    /* border: 5px red solid; */
+    height: 257mm;
+    /* outline: 2cm #FFEAEA solid; */
+    border: 1px solid black;
+}
+
+@page {
+    size: A4;
+    margin: 0;
+}
+@media print {
+    html, body {
+        width: 210mm;
+        height: 297mm;        
+    }
+    .page {
+        margin: 0;
+        border: initial;
+        border-radius: initial;
+        width: initial;
+        min-height: initial;
+        box-shadow: initial;
+        background: initial;
+        page-break-after: always;
+    }
+}
+
+
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:10px;
+  overflow:hidden;padding:6px 0px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:10px;
+  font-weight:normal;overflow:hidden;padding:6px 0px;word-break:normal;}
+.tg .tg-0lax{text-align:center;vertical-align:middle}
+.tg .tg-ubza{font-size:10px;font-weight:bold;text-align:center;vertical-align:middle}
+.tg .tg-na3a{font-size:10px;font-weight:bold;text-align:center;vertical-align:middle}
+.tg .tg-ezvu{font-size:8px;font-weight:bold;text-align:center;vertical-align:middle}
+.tg .tg-yva3{font-size:8px;text-align:center;vertical-align:bottom}
+.tg .tg-jpc1{font-size:8px;text-align:center;vertical-align:top}
+.tg .tg-nrix{font-size:8px;text-align:center;vertical-align:middle; width: 45px}
+
+.tg .tg-nrix.large{width: 119px}
+
+.tg .tg-nrix.medium{width: 75px}
+
+.tg-0lax img{
+    width: 90%;
+    margin: 0 5%
+}
+
+td.result{
+    border: none;
+    text-align: center;
+    font-size: 8px;
+    padding: 4px 0;
+}

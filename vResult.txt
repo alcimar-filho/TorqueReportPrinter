@@ -1,0 +1,22 @@
+SELECT        rid.ID, CASE WHEN n.ItemValue IS NULL THEN '' ELSE n.ItemValue END AS Description, s.ItemValue AS Station, LEFT(d.ItemValue, 11) + t.ItemValue AS DateTime, CASE WHEN tm.ItemValue IS NULL 
+                         THEN 'N/A' ELSE CAST(tm.ItemValue AS VARCHAR(10)) END AS Tmin, CASE WHEN tx.ItemValue IS NULL THEN 'N/A' ELSE CAST(tx.ItemValue AS VARCHAR(10)) END AS Tmax, CASE WHEN tq.ItemValue IS NULL 
+                         THEN 'N/A' ELSE CAST(tq.ItemValue AS VARCHAR(10)) END AS Torque, CASE WHEN am.ItemValue IS NULL THEN 'N/A' ELSE CAST(am.ItemValue AS VARCHAR(5)) END AS Amin, CASE WHEN ax.ItemValue IS NULL 
+                         THEN 'N/A' ELSE CAST(ax.ItemValue AS VARCHAR(5)) END AS Amax, CASE WHEN a.ItemValue IS NULL THEN 'N/A' ELSE CAST(a.ItemValue AS VARCHAR(5)) END AS Angle, 
+                         CASE WHEN st.ItemValue = 1 THEN 'OK' ELSE 'NG' END AS Status, c.ItemValue AS BatchTarget, o.Identifier AS Operator, model.Identifier AS Model
+FROM            dbo.Result AS rid LEFT OUTER JOIN
+                         dbo.ResultValueString AS s ON rid.ID = s.ResultID AND s.ResultValueTypeID = 78 LEFT OUTER JOIN
+                         dbo.ResultValueString AS n ON n.ResultValueTypeID = 79 AND n.ResultID = rid.ID LEFT OUTER JOIN
+                         dbo.ResultValueString AS d ON d.ResultValueTypeID = 70 AND d.ResultID = rid.ID LEFT OUTER JOIN
+                         dbo.ResultValueString AS t ON t.ResultValueTypeID = 71 AND t.ResultID = rid.ID LEFT OUTER JOIN
+                         dbo.ResultValueFloat AS tm ON tm.ResultValueTypeID = 73 AND tm.ResultID = rid.ID LEFT OUTER JOIN
+                         dbo.ResultValueFloat AS tx ON tx.ResultValueTypeID = 74 AND tx.ResultID = rid.ID LEFT OUTER JOIN
+                         dbo.ResultValueFloat AS tq ON tq.ResultValueTypeID = 62 AND tq.ResultID = rid.ID LEFT OUTER JOIN
+                         dbo.ResultValueInteger AS am ON am.ResultValueTypeID = 75 AND am.ResultID = rid.ID LEFT OUTER JOIN
+                         dbo.ResultValueInteger AS ax ON ax.ResultValueTypeID = 76 AND ax.ResultID = rid.ID LEFT OUTER JOIN
+                         dbo.ResultValueInteger AS a ON a.ResultValueTypeID = 64 AND a.ResultID = rid.ID LEFT OUTER JOIN
+                         dbo.ResultValueInteger AS st ON st.ResultValueTypeID = 66 AND st.ResultID = rid.ID LEFT OUTER JOIN
+                         dbo.ResultValueInteger AS c ON c.ResultValueTypeID = 2 AND c.ResultID = rid.ID LEFT OUTER JOIN
+                         dbo.ResultToResultIdentifier AS r ON r.SortOrder = 2 AND r.ResultID = rid.ID INNER JOIN
+                         dbo.ResultIdentifier AS o ON r.ResultIdentifierID = o.ID INNER JOIN
+                         dbo.ResultToResultIdentifier AS modelid ON modelid.SortOrder = 0 AND modelid.ResultID = rid.ID INNER JOIN
+                         dbo.ResultIdentifier AS model ON modelid.ResultIdentifierID = model.ID

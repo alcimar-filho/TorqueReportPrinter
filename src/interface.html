@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressão do relatório de torques</title>
+    <link rel="stylesheet" href="styles/interface.css">
+</head>
+<body>
+    <header>
+        <div class="header-img">
+            <img src="images/Triumph.jpg" alt="">
+        </div>
+        <h1>Impressão do relatório de torques</h1>
+    </header>
+    <main>
+        <form>
+            <div class="input">
+                <label for="VIN">Número do motor:</label>
+                <input type="text">
+            </div>
+            <span id="mensagem-de-erro"></span>
+            <button type="submit"></button>
+            <button type="submit" class="botao-imprimir"><span><img src="images/printer.svg" alt=""></span><strong>IMPRIMIR</strong></button>
+        </form>
+    </main>
+
+    <script src="scripts/interface.js"></script>
+    
+</body>
+</html>

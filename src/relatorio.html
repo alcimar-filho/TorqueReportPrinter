@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DC Tool Torque Report</title>
+        <link rel="stylesheet" href="styles/relatorio.css">
+    </head>
+    <body>
+        
+        <div class="book">
+            <div class="page">
+                <div class="subpage">
+                                
+                    <table class="tg">
+                        <thead>
+                            <tr>
+                                <th class="tg-0lax img" colspan="3" rowspan="2"><img src="images/Triumph.jpg" alt=""></th>
+                                <th class="tg-ubza" colspan="5">Engine Torque Run Down Report</th>
+                                <th class="tg-ubza" colspan="2">Engine Status</th>
+                                <th class="tg-ubza" id="engine-status"></th>
+                                <th class="tg-ezvu">Sheet</th>
+                                <th class="tg-yva3">1 of 1</th>
+                            </tr>
+                            <tr>
+                                <td class="tg-ubza">Engine Number</td>
+                                <td class="tg-ubza" colspan="2" id="engine-number"></td>
+                                <td class="tg-ubza">Type</td>
+                                <td class="tg-ubza" id="type"></td>
+                                <td class="tg-ubza" colspan="2">Build Status</td>
+                                <td class="tg-na3a" id="build-status"></td>
+                                <td class="tg-ezvu">Print date</td>
+                                <td class="tg-ubza" id="print-date"></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="tg-nrix">Joint</td>
+                                <td class="tg-nrix large">Description</td>
+                                <td class="tg-nrix large">Station</td>
+                                <td class="tg-nrix large">Date Time</td>
+                                <td class="tg-nrix">Tmin</td>
+                                <td class="tg-nrix">Tmax</td>
+                                <td class="tg-nrix">Torque</td>
+                                <td class="tg-nrix">A Min</td>
+                                <td class="tg-nrix">A max</td>
+                                <td class="tg-nrix">Angle</td>
+                                <td class="tg-nrix">Status </td>
+                                <td class="tg-nrix">Count</td>
+                                <td class="tg-nrix medium">Operator</td>
+                            </tr>
+                        </tbody>
+                        <tbody id="dados"></tbody>
+                    </table>
+                    
+                </div>    
+            </div>
+        </div>
+    <script src="scripts/relatorio.js"></script>    
+    </body>
+</html>
