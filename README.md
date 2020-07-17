@@ -1,5 +1,5 @@
 # Torque Report Printer
-In Triumph Motocycles we use Atlas Copco electronic torque wrenches to apply torques in some main engine bolts.
+In Triumph Motocycles we use electronic torque wrenches to apply torques in some main engine bolts.
 
 These tools send the information about the torques applied to a SQL Server database and we used to have a desktop app to print a torque report of these torques, 
 which was then attached to the build card of the engine.
@@ -7,7 +7,7 @@ which was then attached to the build card of the engine.
 About six months we updated the software that manages the database and the tools programming and since then the application that prints the report stopped working.
 
 
-We quoted the development of a new application with Atlas Copco but they would charge around 20.000 USD to do it (what was completely over our budget).
+We quoted the development of a new application with our supplier but they charged a amount completely over our budge.
 
 Since I was alreday studying about web development and had recently found out about Electron, I decided to give it a go and now we have are printing torque reports again haha.
 
